@@ -21,9 +21,9 @@ app.get("/", function (req, res) {
 app.get("/api/whoami", function (req, res) {
 	let ip = req.headers['x-forwarded-for'];
 	if(ip) {
-		ip = req.headers['x-forwarded-for'].substr(0,15);
+		ip = req.headers['x-forwarded-for'].split(',').shift();
 	} else {
-		ip = "could not find ip address";
+		ip = req.connection.remoteAddress;
 	}
   res.json({"ipaddress": ip, "language": req.headers["accept-language"], "software": req.headers["user-agent"]});
 });
