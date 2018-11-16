@@ -18,13 +18,15 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
-// your first API endpoint... 
-app.get("/api/hello", function (req, res) {
-  res.json({greeting: 'hello API'});
+app.get("/api/whoami", function (req, res) {
+	let ip = req.headers['x-forwarded-for'];
+	if(ip) {
+		ip = req.headers['x-forwarded-for'].substr(0,15);
+	} else {
+		ip = "could not find ip address";
+	}
+  res.json({"ipaddress": ip, "language": req.headers["accept-language"], "software": req.headers["user-agent"]});
 });
-
-
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
