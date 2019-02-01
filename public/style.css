@@ -1,12 +1,12 @@
 /****** Main Styling ******/
 
 body {
+	background: aliceblue;
+	color: #222;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
-	text-align: center;
 	line-height: 1.4em;
+	text-align: center;
 }
 
 .container {
@@ -18,25 +18,24 @@ h3 {
   margin-top: 30px;
 }
 
-.footer {
-	margin-top: 40px;
-}
-
 .user-stories {
+  margin: 15px auto;
+  max-width: 700px;
   position: relative;
   text-align: justify;
-  max-width: 700px;
-  margin: 15px auto;
 }
+
 code {
+  background-color: #fff;
+  color: black;
   font-family: monospace;
   padding: 2px;
-  color: black;
-  background-color: #fff;
 }
+
 ol {
 	list-style-position: outside;
 }
+
 ul {
 	list-style-type: none;
 }
@@ -44,10 +43,20 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
+
 .user-stories li {
   margin-bottom: 1em;
 }
 
 a {
 	color: #2574A9;
+}
+
+button {
+  background: royalblue;
+  border: 1px solid royalblue;
+  border-radius: 2px; 
+  color: white;
+  font-size: 18px;
+  padding: 5px 20px;
 }
